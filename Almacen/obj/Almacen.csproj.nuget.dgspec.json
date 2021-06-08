@@ -1,21 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\LENOVO\\Documents\\ITSUR\\OctavoSemestrex2\\ProgramacionwebII\\Proyecto\\Almacen\\Almacen\\Almacen.csproj": {}
+    "C:\\Users\\Shana\\Source\\Repos\\WebAlmacen2\\Almacen\\Almacen.csproj": {}
   },
   "projects": {
-    "C:\\Users\\LENOVO\\Documents\\ITSUR\\OctavoSemestrex2\\ProgramacionwebII\\Proyecto\\Almacen\\Almacen\\Almacen.csproj": {
+    "C:\\Users\\Shana\\Source\\Repos\\WebAlmacen2\\Almacen\\Almacen.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\LENOVO\\Documents\\ITSUR\\OctavoSemestrex2\\ProgramacionwebII\\Proyecto\\Almacen\\Almacen\\Almacen.csproj",
+        "projectUniqueName": "C:\\Users\\Shana\\Source\\Repos\\WebAlmacen2\\Almacen\\Almacen.csproj",
         "projectName": "Almacen",
-        "projectPath": "C:\\Users\\LENOVO\\Documents\\ITSUR\\OctavoSemestrex2\\ProgramacionwebII\\Proyecto\\Almacen\\Almacen\\Almacen.csproj",
-        "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\LENOVO\\Documents\\ITSUR\\OctavoSemestrex2\\ProgramacionwebII\\Proyecto\\Almacen\\Almacen\\obj\\",
+        "projectPath": "C:\\Users\\Shana\\Source\\Repos\\WebAlmacen2\\Almacen\\Almacen.csproj",
+        "packagesPath": "C:\\Users\\Shana\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Shana\\Source\\Repos\\WebAlmacen2\\Almacen\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Shana\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -40,7 +44,23 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.6, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.6, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[5.0.6, )"
+            },
             "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
+              "target": "Package",
+              "version": "[5.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
               "target": "Package",
               "version": "[5.0.6, )"
             },

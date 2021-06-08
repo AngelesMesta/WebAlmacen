@@ -1,4 +1,4 @@
-﻿@model Almacen.Models.Producto;
+﻿@model Almacen.Models.ES;
 @{
     ViewData["Title"] = "Agregar un nuevo producto";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -13,39 +13,62 @@
     </div>
 
     <div class="row">
-    <div class="col-sm-10">
-        <form method="post" asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            @*<div class="form-group">
+        <div class="col-sm-10">
+            <form method="post" asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                @*<div class="form-group">
                 <label asp-for="IdProducto" class="control-label"></label>
                 <input asp-for="IdProducto" class="form-control" />
                 <span asp-validation-for="IdProducto" class="text-danger"></span>
             </div>*@
-            <div class="form-group">
-                <label asp-for="Nombre" class="control-label"></label>
-                <input asp-for="Nombre" class="form-control" />
-                <span asp-validation-for="Nombre" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Existencia" class="control-label"></label>
-                <input asp-for="Existencia" class="form-control" />
-                <span asp-validation-for="Existencia" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="descripcion" class="control-label"></label>
-                <input asp-for="descripcion" class="form-control" />
-                <span asp-validation-for="descripcion" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Precio" class="control-label"></label>
-                <input asp-for="Precio" class="form-control" />
-                <span asp-validation-for="Precio" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Agregar" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
+                <div class="form-group">
+                    <label asp-for="Tipo" class="control-label"></label>
+                    <input asp-for="Tipo" class="form-control" />
+                    <span asp-validation-for="Tipo" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="IdPro" class="control-label"></label>
+                    <input asp-for="IdPro" class="form-control" />
+                    <span asp-validation-for="IdPro" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="cantidad" class="control-label"></label>
+                    <input asp-for="cantidad" class="form-control" />
+                    <span asp-validation-for="cantidad" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Usuario" class="control-label"></label>
+                    <input asp-for="Usuario" class="form-control" />
+                    <span asp-validation-for="Usuario" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="FechaMov" class="control-label"></label>
+                    <input asp-for="FechaMov" class="form-control" />
+                    <span asp-validation-for="FechaMov" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="BodegaEntrada" class="control-label"></label>
+                    <input asp-for="BodegaEntrada" class="form-control" />
+                    <span asp-validation-for="BodegaEntrada" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="BodegaSalida" class="control-label"></label>
+                    <input asp-for="BodegaSalida" class="form-control" />
+                    <span asp-validation-for="BodegaSalida" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Agregar" class="btn btn-primary" />
+                </div>
+            </form>
+            <form method = "post" enctype = "multipart/form-data"  asp-action = "SubirArchivo">
+                <div>
+                    <span> Seleccionar archivo: </span>
+                    <input type="file" name="postedFiles" multiple />
+                    <input type="submit" value="Upload" />
+                    <Br />
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 @section Scripts{ @{<partial name="_ValidationScriptsPartial" />}}
