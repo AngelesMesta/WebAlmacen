@@ -18,7 +18,6 @@ namespace Almacen.Models
         public int Existencia { get; set; }
         [Required(ErrorMessage = "La descripción del producto es oblgatorio")]
         public string descripcion { get; set; }
-
         [Required(ErrorMessage = "El precio del producto es oblgatorio")]
         [Column(TypeName = "decimal(5, 2)")]
         public decimal Precio { get; set; }

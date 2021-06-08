@@ -10,8 +10,8 @@ namespace Almacen.Controllers
 {
     public class UsuriosController : Controller
     {
-        private readonly ApplicationDbContext _context;
-        public UsuriosController(ApplicationDbContext context)
+        private readonly AlmacenContext _context;
+        public UsuriosController(AlmacenContext context)
         {
             _context = context;
         }

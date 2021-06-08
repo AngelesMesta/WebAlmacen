@@ -15,6 +15,8 @@ namespace Almacen.Models
 
         [Required]
         public int Tipo { get; set; }
+        [Required(ErrorMessage = "Es necesario registrar el Id del producto")]
+        public int IdPro { get; set; }
         [Required(ErrorMessage = "Es necesario registrar la cantidad")]
         public int cantidad { get; set; }
         [Required(ErrorMessage = "El nombre del usuario es oblgatorio")]

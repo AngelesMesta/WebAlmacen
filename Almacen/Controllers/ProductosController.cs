@@ -5,18 +5,39 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 
 namespace Almacen.Controllers
 {
+    
     public class ProductosController : Controller
     {
-        private readonly ApplicationDbContext _context;
-        public ProductosController(ApplicationDbContext context)
+        private readonly AlmacenContext _context;
+        private readonly UserManager<IdentityUser> userManager;
+        //private readonly RoleManager<IdentityRole> roleManager;
+        public ProductosController(UserManager<IdentityUser> userManager, AlmacenContext context)
         {
+            this.userManager = userManager;
+            //this.roleManager = roleManager;
             _context = context;
         }
-        public IActionResult Index()
-        {
+       
+      
+        //public ProductosController(UserManager<IdentityUser> userManager,
+        //    RoleManager<IdentityRole>roleManager)
+        //{
+        //    this.userManager = userManager;
+        //    this.roleManager = roleManager;
+        // }
+        public async Task<IActionResult> Index()
+        { 
+            //if (User.Identity.IsAuthenticated)
+            //{
+            //    await roleManager.CreateAsync(new IdentityRole("Admin"));
+            //    var user = await userManager.GetUserAsync(HttpContext.User);
+            //    await userManager.AddToRoleAsync(user, "Admin");
+            //}
             IEnumerable<Producto> ListaProductos = _context.Producto;
             return View(ListaProductos);
         }
@@ -37,6 +58,7 @@ namespace Almacen.Controllers
             }
             return View();
         }
+        [Authorize(Roles ="Admin")]
         public IActionResult Edit(int? id)
         {
             if(id==null||id==0)
@@ -78,9 +100,9 @@ namespace Almacen.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult DeleteProducto(int? id)
+        public IActionResult DeleteProducto(int? ide)
         {
-            var pro = _context.Producto.Find(id);
+            var pro = _context.Producto.Find(ide);
             if(pro==null)
             {
                 return NotFound();
